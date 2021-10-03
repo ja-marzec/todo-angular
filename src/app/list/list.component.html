@@ -1,1 +1,6 @@
-<p>list works!</p>
+<div>
+  <div *ngFor="let item of characters.results">
+    <div>{{ item.name }}</div>
+    <img src="{{ item.image }}" />
+  </div>
+</div>

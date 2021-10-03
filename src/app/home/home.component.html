@@ -12,7 +12,7 @@
     <p>typed: {{name}}</p>
 </div>
 
-<div [style.background-color]="clickCounter > 4 ? 'red' : 'blue'">
+<div [ngClass]="setClasses()">
     <ng-template [ngIf]="clickCounter % 2 === 0" [ngIfElse]="none">
         <div>bigger </div>
     </ng-template>
