@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   clickCounter: number = 0;
   name: string = 'hello';
+  todos: string[] = ["hello", "jedzenie"]
 
   constructor() {}
 
@@ -23,5 +24,10 @@ export class HomeComponent implements OnInit {
       notActive: this.clickCounter <= 4,
     };
     return classes;
+  }
+
+  addTodo(item: string) {
+    this.todos.push(item);
+    this.name = ""
   }
 }

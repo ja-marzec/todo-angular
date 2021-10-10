@@ -1,23 +1,15 @@
-<p>home works!</p>
 <div>
-    <p>
-        Clicked
-        <button (click)="countClick()">
-            Add
-        </button>
-        {{clickCounter}}
-    </p>
+  <input type="text" [(ngModel)]="name" />
+  <button (click)="addTodo(name)">Add TODO</button>
 
-    <input type="text" [(ngModel)]="name">
-    <p>typed: {{name}}</p>
+  <p>typed: {{ name }}</p>
 </div>
 
-<div [ngClass]="setClasses()">
-    <ng-template [ngIf]="clickCounter % 2 === 0" [ngIfElse]="none">
-        <div>bigger </div>
-    </ng-template>
-
-    <ng-template #none>
-        <div>lesser</div>
-    </ng-template>
+<div>
+  TODO:
+  <ul>
+    <li *ngFor="let item of todos">
+      {{ item }}
+    </li>
+  </ul>
 </div>
