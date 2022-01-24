@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CharacterComponent } from './character/character.component';
 import { ListItemComponent } from './list/list-item/list-item.component';
+import { ModalComponent } from './list/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListItemComponent } from './list/list-item/list-item.component';
     HomeComponent,
     ListComponent,
     CharacterComponent,
-    ListItemComponent
+    ListItemComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

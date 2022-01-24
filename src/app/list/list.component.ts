@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this._http.getCharacters().subscribe((data) => {
       this.characters = data;
-      console.log(this.characters);
     });
   }
 

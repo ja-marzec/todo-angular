@@ -2,7 +2,11 @@
 <div class="d-flex flex-wrap">
 
 <div *ngFor="let item of characters.results">
-    <app-list-item [character]="item">
+    <app-list-item [character]="item" (click)="showInfo(item)">
     </app-list-item>
   </div>
 </div>
+
+<app-modal *ngIf="characterInfo" >
+
+</app-modal>

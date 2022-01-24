@@ -14,20 +14,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  countClick(): void {
-    this.clickCounter += 1;
-  }
-
-  setClasses() {
-    const classes = {
-      active: this.clickCounter > 4,
-      notActive: this.clickCounter <= 4,
-    };
-    return classes;
-  }
-
   addTodo(item: string) {
-    this.todos.push(item);
-    this.name = ""
+    if(item !== "") {
+      this.todos.push(item);
+      this.name = ""
+
+    }
   }
 }
