@@ -21,4 +21,9 @@ export class HomeComponent implements OnInit {
 
     }
   }
+
+  removeTodo(value: string) {
+    const newTodos = this.todos.filter(item => item !== value)
+    this.todos = newTodos
+  }
 }

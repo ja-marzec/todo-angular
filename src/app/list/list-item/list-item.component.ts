@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-item',
@@ -8,10 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListItemComponent implements OnInit {
 
   @Input() character: any;
-  constructor() { }
-
+  constructor(private router: Router) {}
+  
   showInfo(item: any) {
-    console.log(item)
+    this.router.navigate(['/character'], {state: { ...item}});
   }
   
   ngOnInit(): void {

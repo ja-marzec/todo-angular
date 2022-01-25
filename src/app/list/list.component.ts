@@ -7,6 +7,7 @@ import { HttpService } from '../http.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
+  page : number = 1;
   characters: any = {
     info: [],
     retults: [],
@@ -18,7 +19,8 @@ export class ListComponent implements OnInit {
   constructor(private _http: HttpService) {}
 
   ngOnInit(): void {
-    this._http.getCharacters().subscribe((data) => {
+    this._http.getCharacters(this.page).subscribe((data) => {
+      console.log(data)
       this.characters = data;
     });
   }

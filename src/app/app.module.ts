@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CharacterComponent } from './character/character.component';
 import { ListItemComponent } from './list/list-item/list-item.component';
 import { ModalComponent } from './list/modal/modal.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModalComponent } from './list/modal/modal.component';
     ListComponent,
     CharacterComponent,
     ListItemComponent,
-    ModalComponent
+    ModalComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,

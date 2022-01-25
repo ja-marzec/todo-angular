@@ -9,7 +9,7 @@ export class HttpService {
 
     }
 
-    getCharacters() {
-        return this.http.get('https://rickandmortyapi.com/api/character')
+    getCharacters(page: number) {
+        return this.http.get(`https://rickandmortyapi.com/api/character?page=${page}`)
     }
 }

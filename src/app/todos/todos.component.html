@@ -1,0 +1,19 @@
+<div>
+    <input type="text" [(ngModel)]="name" />
+    <button (click)="addTodo(name)">Add TODO</button>
+  
+    <p>typed: {{ name }}</p>
+  </div>
+  
+  <div>
+    TODO:
+    <ul>
+      <li *ngFor="let item of todos" >
+        {{ item }}
+        <button (click)="removeTodo(item)">
+          Remove
+        </button>
+      </li>
+    </ul>
+  </div>
+  
