@@ -12,6 +12,7 @@ import { CharacterComponent } from './character/character.component';
 import { ListItemComponent } from './list/list-item/list-item.component';
 import { ModalComponent } from './list/modal/modal.component';
 import { TodosComponent } from './todos/todos.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TodosComponent } from './todos/todos.component';
     CharacterComponent,
     ListItemComponent,
     ModalComponent,
-    TodosComponent
+    TodosComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

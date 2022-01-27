@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
+import { Characters, HttpService } from '../http.service';
 
 @Component({
   selector: 'app-list',
@@ -7,10 +7,11 @@ import { HttpService } from '../http.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  page : number = 1;
-  characters: any = {
-    info: [],
-    retults: [],
+  page: number = 1;
+  limitReached: boolean = false;
+  characters: Characters = {
+    info: { pages: 2 },
+    results: [],
   };
 
   modalOpen = false;
@@ -20,9 +21,34 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this._http.getCharacters(this.page).subscribe((data) => {
-      console.log(data)
+      console.log(data);
       this.characters = data;
     });
+  }
+
+  fetchPage() {
+    this._http.getCharacters(this.page).subscribe((data) => {
+      this.characters = data;
+    });
+  }
+
+  validatePageLimit = this.page < this.characters.info?.pages;
+  validatePageBack = this.page < this.characters.info?.pages;
+
+  fetchNextPage(): void {
+    if (this.validatePageLimit) {
+      this.page += 1;
+      this.fetchPage();
+      return;
+    }
+    this.limitReached = true;
+  }
+
+  fetchPreviousPage(): void {
+    if (this.validatePageBack) {
+      this.page -= 1;
+      this.fetchPage();
+    }
   }
 
   showInfo(item: any) {

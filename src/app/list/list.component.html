@@ -1,12 +1,12 @@
-
 <div class="d-flex flex-wrap">
-
-<div *ngFor="let item of characters.results">
-    <app-list-item [character]="item" (click)="showInfo(item)">
-    </app-list-item>
+  <div *ngFor="let item of characters.results">
+    <app-list-item [character]="item" (click)="showInfo(item)"> </app-list-item>
   </div>
 </div>
-
-<app-modal *ngIf="characterInfo" >
-
-</app-modal>
+<div class="footer">
+  <button *ngIf="page > 1" type="button" class="btn btn-secondary" (click)="fetchPreviousPage()">Back</button>
+  <button type="button" class="btn btn-primary" (click)="fetchNextPage()">Next</button>
+</div>
+<app-modal *ngIf="characterInfo"> </app-modal>
+<!-- TODO - add loader -->
+<!-- <app-loader></app-loader> -->
